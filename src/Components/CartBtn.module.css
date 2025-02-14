@@ -1,0 +1,65 @@
+.btn {
+    position: fixed;
+    right: 5%;
+    top: 20%;
+    border-radius: 50%;
+    padding: 24px;
+    transition: transform 200ms;
+    border-style: none;
+    background-color: var(--main-color);
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    transform-style: preserve-3d;
+}
+
+.btn.flip {
+    transform: rotateY(180deg);
+}
+
+.btn img {
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+}
+
+.btn.flip:hover {
+    transform: scale(110%) rotateY(180deg);
+}
+
+.btn:hover {
+    transform: scale(110%);
+}
+
+.cart {
+    transform: translate(-50%, -50%)
+}
+
+.flip .cart {
+    opacity: 0;
+}
+
+
+
+.back {
+    transform: translate(-50%, -50%) rotateY(180deg);
+    opacity: 0;
+}
+
+.flip .back {
+    opacity: 100%;
+}
+
+.quantity {
+    background-color: black;
+    color: white;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+}
