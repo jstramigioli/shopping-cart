@@ -1,0 +1,27 @@
+.container {
+    text-align: center;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #34495e;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.description {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    line-height: 1.8;
+}

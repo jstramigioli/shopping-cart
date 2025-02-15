@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import PropTypes from 'prop-types'
 import styles from './ProductCard.module.css'
 
 function ProductCard( {display, product, setCart, currentQuantity} ) {
@@ -23,14 +23,23 @@ function ProductCard( {display, product, setCart, currentQuantity} ) {
             <img src={product.image} alt={product.title} />
             <h1>{product.title}</h1>
             <h2>${product.price}</h2>
-            <button onClick={() => setQuantityInCart(currentQuantity-1 >= 0 ? 
-                currentQuantity-1 :
-                0
-            )}>-</button>
-            <input type='number' value={currentQuantity} onChange={(e) => setQuantityInCart(e.target.value >= 0 ? Number(e.target.value) : 0)}/>
-            <button onClick={() => setQuantityInCart(currentQuantity+1)}>+</button>
+            <div className={styles.flex}>
+                <button onClick={() => setQuantityInCart(currentQuantity-1 >= 0 ?
+                    currentQuantity-1 :
+                    0
+                )}>-</button>
+                <input type='number' value={currentQuantity} onChange={(e) => setQuantityInCart(e.target.value >= 0 ? Number(e.target.value) : 0)}/>
+                <button onClick={() => setQuantityInCart(currentQuantity+1)}>+</button>
+            </div>
         </li>
     )
+}
+
+ProductCard.propTypes = {
+    display: PropTypes.string,
+    product: PropTypes.object,
+    setCart: PropTypes.func,
+    currentQuantity: PropTypes.number
 }
 
 export default ProductCard

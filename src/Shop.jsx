@@ -21,39 +21,56 @@ function Shop() {
 
 
     return (
-        
-        showingCart ?
         <>
-        <h2>Cart Summary</h2>
-        <CartBtn onClick={()=>setShowingCart(!showingCart)} showingCart={showingCart} cart={cart}/>
-        <div className={styles.cartSummary}>
-            <ul>
-                {cart.map((element) => <ProductCard
-                    key={element.product.id}
-                    product={element.product}
-                    setCart={setCart}
-                    currentQuantity={element.quantity}
-                    display='row'
-                        />)
-                }
-            </ul>
-        <h3>Total: ${cart.reduce((acc, current) => current.product.price * current.quantity + acc, 0).toFixed(2)}</h3>
-        </div>
-        </> :
-        <>
-        <CartBtn onClick={()=>setShowingCart(!showingCart)} cart={cart} showingCart={showingCart}/>
-        <div className={styles.productGrid}>
-            {productList.map(product => (
-                <ProductCard key={product.id} 
-                product={product} 
-                setCart={setCart}
-                currentQuantity={cart.find(item => item.product.id === product.id) ? cart.find(item => item.product.id === product.id).quantity : 0}
-                />
-            ))}
-              
-        </div>
-        </> 
-    )
+            <CartBtn onClick={() => setShowingCart(!showingCart)} cart={cart} showingCart={showingCart} />
+            <div className={styles.shopContainer}>
+                {showingCart ? (
+                    <>
+                        
+                            <ul>
+                                {cart.map((element) => (
+                                    <ProductCard
+                                        key={element.product.id}
+                                        product={element.product}
+                                        setCart={setCart}
+                                        currentQuantity={element.quantity}
+                                        display="row"
+                                    />
+                                ))}
+                            </ul>
+                            <div className={styles.cartSummary}>
+                            <h2>Cart Summary</h2>
+                            <h3>
+                                Total: $
+                                {cart
+                                    .reduce((acc, current) => current.product.price * current.quantity + acc, 0)
+                                    .toFixed(2)}
+                            </h3>
+                            <button className={styles.checkoutButton}>Checkout</button>
+                
+                        </div>
+                    </>
+                ) : (
+                    <>
+                        <div className={styles.productGrid}>
+                            {productList.map((product) => (
+                                <ProductCard
+                                    key={product.id}
+                                    product={product}
+                                    setCart={setCart}
+                                    currentQuantity={
+                                        cart.find((item) => item.product.id === product.id)
+                                            ? cart.find((item) => item.product.id === product.id).quantity
+                                            : 0
+                                    }
+                                />
+                            ))}
+                        </div>
+                    </>
+                )}
+            </div>
+        </>
+    );
 }
 
 

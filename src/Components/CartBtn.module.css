@@ -4,7 +4,7 @@
     top: 20%;
     border-radius: 50%;
     padding: 24px;
-    transition: transform 200ms;
+    transition: transform 400ms ease-in-out;
     border-style: none;
     background-color: var(--main-color);
     cursor: pointer;
@@ -18,7 +18,7 @@
 }
 
 .btn img {
-    
+    backface-visibility: hidden;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -30,27 +30,21 @@
 }
 
 .btn:hover {
-    transform: scale(110%);
+    transform: scale(110%) ;
 }
 
 .cart {
     transform: translate(-50%, -50%)
 }
 
-.flip .cart {
-    opacity: 0;
-}
 
 
 
 .back {
     transform: translate(-50%, -50%) rotateY(180deg);
-    opacity: 0;
 }
 
-.flip .back {
-    opacity: 100%;
-}
+
 
 .quantity {
     background-color: black;

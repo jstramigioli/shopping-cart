@@ -1,3 +1,11 @@
+.shopContainer {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .productGrid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -8,6 +16,41 @@
     margin: 0 auto;
 }
 
+.shopContainer ul {
+    max-width: 800px;
+}
+
 .cartSummary {
-    display: flex;
+    text-align: center;
+    min-width: 300px
+}
+
+.cartSummary h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.cartSummary h3 {
+    font-size: 1.5rem;
+    color: #34495e;
+    margin-top: 1.5rem;
+    text-align: right;
+}
+
+.checkoutButton {
+    background-color: var(--main-color);
+    color: rgb(0, 0, 0);
+    padding: 2.8rem 2.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.checkoutButton:hover {
+    transform: scale(110%);
 }

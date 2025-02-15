@@ -1,10 +1,9 @@
 import cartImg from '../assets/cart.svg'
 import style from './CartBtn.module.css'
 import backImg from '../assets/back.svg' 
-import { useState } from 'react'
+import PropTypes from 'prop-types'
 
 function CartBtn({onClick, showingCart, cart}) {
-/* const [flip, setFlip] = useState(false) */
 
     return (
         <button onClick={onClick} 
@@ -18,6 +17,12 @@ function CartBtn({onClick, showingCart, cart}) {
             
         </button>
     )
+}
+
+CartBtn.propTypes = {
+    onClick: PropTypes.func,
+    showingCart: PropTypes.bool,
+    cart: PropTypes.array
 }
 
 export default CartBtn
